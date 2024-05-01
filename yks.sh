@@ -23,5 +23,11 @@ remaining_days=$((remaining_seconds / 86400))  # 1 gün = 86400 saniye
 
 curl -o "$download_folder/image.jpg" "https://matematikdelisi.com/yks/sayac/images/tyt/tyt-sinavina-geri-sayim-kalan-gun-$remaining_days.jpg"
 
+if [ $(echo $DESKTOP_SESSION) = 'xfce' ]; then
+# xfce için duvar kağıdını ayarlayın
+	xfconf-query -c xfce4-desktop -p $(xfconf-query -c xfce4-desktop -l | grep "workspace0/last-image") -s "$download_folder/image.jpg"
+else
 # Nitrogen ile duvar kağıdını ayarlayın
 nitrogen --set-centered "$download_folder/image.jpg"
+fi
+
