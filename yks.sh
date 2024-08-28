@@ -9,6 +9,8 @@ download_folder="$(echo $HOME)"
 
 # Hedef tarih
 target_date="2025-06-14 10:15"
+# Yıl-Ay-Gün Saat:Dakika şeklinde
+
 
 # Hedef tarihi saniyeye çevirin
 target_epoch=$(date -d "$target_date" +"%s")
@@ -19,6 +21,11 @@ current_epoch=$(date +"%s")
 # Kalan süreyi hesaplayın
 remaining_seconds=$((target_epoch - current_epoch))
 remaining_days=$((remaining_seconds / 86400))  # 1 gün = 86400 saniye
+
+if [ $remaining_days -lt 0 ]; then
+    printf " Hata: Belirlenen sınav tarihi çoktan geçmiş.\n Lütfen sonraki yks zamanını bu betik için düzenleyin veya geliştirici ile iletişime geçin.\n https://github.com/Metincloup/YKS-Timer-Walpaper/issues adresinde issue açabilirsiniz.\n"
+exit 1
+fi
 
 
 curl -o "$download_folder/image.jpg" "https://matematikdelisi.com/yks/sayac/images/tyt/tyt-sinavina-geri-sayim-kalan-gun-$remaining_days.jpg"
