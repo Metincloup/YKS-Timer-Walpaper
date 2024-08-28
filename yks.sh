@@ -8,7 +8,7 @@ download_folder="$(echo $HOME)"
 
 
 # Hedef tarih
-target_date="2024-06-08 10:15"
+target_date="2025-06-14 10:15"
 
 # Hedef tarihi saniyeye çevirin
 target_epoch=$(date -d "$target_date" +"%s")
