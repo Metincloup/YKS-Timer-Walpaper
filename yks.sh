@@ -8,7 +8,7 @@ download_folder="$(echo $HOME)"
 
 
 # Hedef tarih
-target_date="2025-06-14 10:15"
+target_date="2025-06-21 10:15"
 # Yıl-Ay-Gün Saat:Dakika şeklinde
 
 
