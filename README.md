@@ -1,4 +1,4 @@
-# YKS-Timer-Walpaper
+# YKS-Timer-Wallpaper
 YKS sınavına kalan günü duvar kağıdı olarak ayarla 
 
 ## Gereksinimler
